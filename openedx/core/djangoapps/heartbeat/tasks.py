@@ -7,6 +7,6 @@ from celery.task import task
 from django.conf import settings
 
 
-@task(routing_key=settings.HEARTBEAT_CELERY_ROUTING_KEY)
+@task
 def sample_task():
     return True
