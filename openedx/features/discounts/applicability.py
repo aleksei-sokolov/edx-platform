@@ -19,7 +19,7 @@ import pytz
 
 from course_modes.models import CourseMode
 from entitlements.models import CourseEntitlement
-from experiments.models import ExperimentData
+from lms.djangoapps.experiments.models import ExperimentData
 from lms.djangoapps.experiments.stable_bucketing import stable_bucketing_hash_group
 from openedx.core.djangoapps.waffle_utils import WaffleFlag, WaffleFlagNamespace
 from openedx.features.discounts.models import DiscountPercentageConfig, DiscountRestrictionConfig

@@ -12,8 +12,8 @@ from edx_django_utils.cache import RequestCache
 from mock import patch
 from opaque_keys.edx.keys import CourseKey
 
-from experiments.factories import ExperimentKeyValueFactory
-from experiments.flags import ExperimentWaffleFlag
+from lms.djangoapps.experiments.factories import ExperimentKeyValueFactory
+from lms.djangoapps.experiments.flags import ExperimentWaffleFlag
 from openedx.core.djangoapps.site_configuration.tests.factories import SiteFactory
 from openedx.core.djangoapps.waffle_utils import CourseWaffleFlag
 from openedx.core.djangoapps.waffle_utils.models import WaffleFlagCourseOverrideModel
