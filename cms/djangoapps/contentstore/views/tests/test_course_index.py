@@ -23,8 +23,8 @@ from cms.djangoapps.contentstore.config.waffle import WAFFLE_NAMESPACE as STUDIO
 from cms.djangoapps.contentstore.courseware_index import CoursewareSearchIndexer, SearchIndexingError
 from cms.djangoapps.contentstore.tests.utils import CourseTestCase
 from cms.djangoapps.contentstore.utils import add_instructor, reverse_course_url, reverse_usage_url
-from course_action_state.managers import CourseRerunUIStateManager
-from course_action_state.models import CourseRerunState
+from common.djangoapps.course_action_state.managers import CourseRerunUIStateManager
+from common.djangoapps.course_action_state.models import CourseRerunState
 from openedx.core.djangoapps.waffle_utils import WaffleSwitchNamespace
 from student.auth import has_course_author_access
 from student.roles import CourseStaffRole, GlobalStaff, LibraryUserRole

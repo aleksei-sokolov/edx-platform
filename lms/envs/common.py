@@ -2570,7 +2570,7 @@ INSTALLED_APPS = [
     'openedx.core.djangoapps.embargo',
 
     # Course action state
-    'course_action_state',
+    'common.djangoapps.course_action_state',
 
     # Additional problem types
     'edx_jsme',    # Molecular Structure
