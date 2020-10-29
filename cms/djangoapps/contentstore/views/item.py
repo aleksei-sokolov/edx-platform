@@ -44,7 +44,7 @@ from common.djangoapps.student.auth import has_studio_read_access, has_studio_wr
 from common.djangoapps.util.date_utils import get_default_time_display
 from common.djangoapps.util.json_request import JsonResponse, expect_json
 from common.djangoapps.util.milestones_helpers import is_entrance_exams_enabled
-from xblock_django.user_service import DjangoXBlockUserService
+from common.djangoapps.xblock_django.user_service import DjangoXBlockUserService
 from xmodule.course_module import DEFAULT_START_DATE
 from xmodule.library_tools import LibraryToolsService
 from xmodule.modulestore import EdxJSONEncoder, ModuleStoreEnum
