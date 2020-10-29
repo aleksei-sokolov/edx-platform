@@ -41,9 +41,9 @@ from openedx.core.lib.gating import api as gating_api
 from openedx.core.lib.xblock_utils import hash_resource, request_token, wrap_xblock, wrap_xblock_aside
 from common.djangoapps.static_replace import replace_static_urls
 from common.djangoapps.student.auth import has_studio_read_access, has_studio_write_access
-from util.date_utils import get_default_time_display
-from util.json_request import JsonResponse, expect_json
-from util.milestones_helpers import is_entrance_exams_enabled
+from common.djangoapps.util.date_utils import get_default_time_display
+from common.djangoapps.util.json_request import JsonResponse, expect_json
+from common.djangoapps.util.milestones_helpers import is_entrance_exams_enabled
 from xblock_django.user_service import DjangoXBlockUserService
 from xmodule.course_module import DEFAULT_START_DATE
 from xmodule.library_tools import LibraryToolsService

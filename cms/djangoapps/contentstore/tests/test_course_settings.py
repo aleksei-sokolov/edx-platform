@@ -34,7 +34,7 @@ from openedx.core.djangoapps.models.course_details import CourseDetails
 from openedx.core.djangoapps.waffle_utils.testutils import override_waffle_flag
 from common.djangoapps.student.roles import CourseInstructorRole, CourseStaffRole
 from common.djangoapps.student.tests.factories import UserFactory
-from util import milestones_helpers
+from common.djangoapps.util import milestones_helpers
 from xblock_django.models import XBlockStudioConfigurationFlag
 from xmodule.fields import Date
 from xmodule.modulestore import ModuleStoreEnum

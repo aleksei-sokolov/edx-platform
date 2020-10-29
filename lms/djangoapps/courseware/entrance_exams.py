@@ -7,7 +7,7 @@ from opaque_keys.edx.keys import UsageKey
 
 from lms.djangoapps.courseware.access import has_access
 from common.djangoapps.student.models import EntranceExamConfiguration
-from util.milestones_helpers import get_required_content, is_entrance_exams_enabled
+from common.djangoapps.util.milestones_helpers import get_required_content, is_entrance_exams_enabled
 from xmodule.modulestore.django import modulestore
 
 

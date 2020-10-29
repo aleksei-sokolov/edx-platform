@@ -57,7 +57,7 @@ from openedx.features.course_experience import (
 )
 from common.djangoapps.student.models import CourseEnrollment, FBEEnrollmentExclusion
 from common.djangoapps.student.tests.factories import UserFactory
-from util.date_utils import strftime_localized
+from common.djangoapps.util.date_utils import strftime_localized
 from xmodule.course_module import COURSE_VISIBILITY_PRIVATE, COURSE_VISIBILITY_PUBLIC, COURSE_VISIBILITY_PUBLIC_OUTLINE
 from xmodule.modulestore import ModuleStoreEnum
 from xmodule.modulestore.tests.django_utils import CourseUserType, ModuleStoreTestCase, SharedModuleStoreTestCase
@@ -670,7 +670,7 @@ class TestCourseHomePageAccess(CourseHomePageTestCase):
         self.assertEqual(response.status_code, 200)
 
     @mock.patch.dict(settings.FEATURES, {'DISABLE_START_DATES': False})
-    @mock.patch("util.date_utils.strftime_localized")
+    @mock.patch("common.djangoapps.util.date_utils.strftime_localized")
     def test_non_live_course_other_language(self, mock_strftime_localized):
         """
         Ensure that a user accessing a non-live course sees a redirect to
@@ -816,7 +816,7 @@ class TestCourseHomePageAccess(CourseHomePageTestCase):
         bannerText = get_expiration_banner_text(self.staff_user, self.course)
         self.assertNotContains(response, bannerText, html=True)
 
-    @mock.patch("util.date_utils.strftime_localized")
+    @mock.patch("common.djangoapps.util.date_utils.strftime_localized")
     @mock.patch("openedx.features.course_duration_limits.access.get_date_string")
     def test_course_expiration_banner_with_unicode(self, mock_strftime_localized, mock_get_date_string):
         """
