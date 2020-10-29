@@ -18,7 +18,7 @@ from rest_framework.test import APITestCase
 from lms.djangoapps.experiments.factories import ExperimentDataFactory, ExperimentKeyValueFactory
 from lms.djangoapps.experiments.models import ExperimentData, ExperimentKeyValue
 from lms.djangoapps.experiments.serializers import ExperimentDataSerializer
-from student.tests.factories import UserFactory
+from common.djangoapps.student.tests.factories import UserFactory
 
 CROSS_DOMAIN_REFERER = 'https://ecommerce.edx.org'
 

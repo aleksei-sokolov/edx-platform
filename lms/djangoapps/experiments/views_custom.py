@@ -27,7 +27,7 @@ from lms.djangoapps.courseware.utils import can_show_verified_upgrade
 from common.djangoapps.course_modes.models import get_cosmetic_verified_display_price
 from lms.djangoapps.commerce.utils import EcommerceService
 from lms.djangoapps.experiments.stable_bucketing import stable_bucketing_hash_group
-from student.models import CourseEnrollment
+from common.djangoapps.student.models import CourseEnrollment
 from track import segment
 
 

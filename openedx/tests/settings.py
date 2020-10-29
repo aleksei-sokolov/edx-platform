@@ -72,7 +72,7 @@ INSTALLED_APPS = (
     'edxval',
     'lms.djangoapps.courseware',
     'lms.djangoapps.instructor_task',
-    'student',
+    'common.djangoapps.student',
     'openedx.core.djangoapps.site_configuration',
     'lms.djangoapps.grades.apps.GradesConfig',
     'lms.djangoapps.certificates.apps.CertificatesConfig',

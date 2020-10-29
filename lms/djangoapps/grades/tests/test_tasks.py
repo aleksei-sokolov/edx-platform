@@ -34,8 +34,8 @@ from lms.djangoapps.grades.tasks import (
 )
 from openedx.core.djangoapps.content.block_structure.exceptions import BlockStructureNotFound
 from openedx.core.djangoapps.waffle_utils.testutils import override_waffle_flag
-from student.models import CourseEnrollment, anonymous_id_for_user
-from student.tests.factories import UserFactory
+from common.djangoapps.student.models import CourseEnrollment, anonymous_id_for_user
+from common.djangoapps.student.tests.factories import UserFactory
 from track.event_transaction_utils import create_new_event_transaction_id, get_event_transaction_id
 from util.date_utils import to_timestamp
 from xmodule.modulestore import ModuleStoreEnum

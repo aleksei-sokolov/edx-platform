@@ -23,8 +23,8 @@ from lms.djangoapps.courseware.tests.helpers import LoginEnrollmentTestCase
 from openedx.core.djangoapps.waffle_utils.testutils import override_waffle_flag
 from openedx.core.djangolib.testing.utils import get_mock_request
 from openedx.features.course_experience import DISABLE_COURSE_OUTLINE_PAGE_FLAG, DISABLE_UNIFIED_COURSE_TAB_FLAG
-from student.models import CourseEnrollment
-from student.tests.factories import AnonymousUserFactory, CourseEnrollmentFactory
+from common.djangoapps.student.models import CourseEnrollment
+from common.djangoapps.student.tests.factories import AnonymousUserFactory, CourseEnrollmentFactory
 from util.milestones_helpers import (
     add_course_content_milestone,
     add_course_milestone,

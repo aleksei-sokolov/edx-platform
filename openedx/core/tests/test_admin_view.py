@@ -6,7 +6,7 @@ This is not inside a django app because it is a global property of the system.
 
 from django.test import TestCase, Client
 from django.urls import reverse
-from student.tests.factories import UserFactory, TEST_PASSWORD
+from common.djangoapps.student.tests.factories import UserFactory, TEST_PASSWORD
 from openedx.core.djangoapps.user_authn.views.login import ENABLE_LOGIN_USING_THIRDPARTY_AUTH_ONLY
 
 

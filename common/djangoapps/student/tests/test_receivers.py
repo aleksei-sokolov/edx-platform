@@ -5,8 +5,8 @@ from lms.djangoapps.courseware.toggles import (
     COURSEWARE_MICROFRONTEND_PROGRESS_MILESTONES,
     COURSEWARE_MICROFRONTEND_PROGRESS_MILESTONES_FIRST_SECTION_CELEBRATION
 )
-from student.models import CourseEnrollmentCelebration
-from student.tests.factories import CourseEnrollmentFactory
+from common.djangoapps.student.models import CourseEnrollmentCelebration
+from common.djangoapps.student.tests.factories import CourseEnrollmentFactory
 from xmodule.modulestore.tests.django_utils import SharedModuleStoreTestCase
 
 

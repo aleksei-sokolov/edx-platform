@@ -15,7 +15,7 @@ from openedx.core.djangoapps.password_policy.compliance import (NonCompliantPass
                                                                 _get_compliance_deadline_for_user,
                                                                 enforce_compliance_on_login,
                                                                 should_enforce_compliance_on_login)
-from student.tests.factories import (CourseAccessRoleFactory,
+from common.djangoapps.student.tests.factories import (CourseAccessRoleFactory,
                                      UserFactory)
 from util.password_policy_validators import ValidationError
 

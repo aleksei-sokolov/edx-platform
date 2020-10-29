@@ -18,9 +18,9 @@ from django.utils.timezone import now
 from mock import Mock
 from pytz import UTC
 
-from student.admin import AllowedAuthUserForm, COURSE_ENROLLMENT_ADMIN_SWITCH, UserAdmin, CourseEnrollmentForm
-from student.models import AllowedAuthUser, CourseEnrollment, LoginFailures
-from student.tests.factories import CourseEnrollmentFactory, UserFactory
+from common.djangoapps.student.admin import AllowedAuthUserForm, COURSE_ENROLLMENT_ADMIN_SWITCH, UserAdmin, CourseEnrollmentForm
+from common.djangoapps.student.models import AllowedAuthUser, CourseEnrollment, LoginFailures
+from common.djangoapps.student.tests.factories import CourseEnrollmentFactory, UserFactory
 from xmodule.modulestore.tests.django_utils import SharedModuleStoreTestCase
 from xmodule.modulestore.tests.factories import CourseFactory
 from openedx.core.djangoapps.content.course_overviews.tests.factories import CourseOverviewFactory

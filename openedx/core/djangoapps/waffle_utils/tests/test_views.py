@@ -5,7 +5,7 @@ from django.test import TestCase
 from rest_framework.test import APIRequestFactory
 from waffle.testutils import override_switch
 
-from student.tests.factories import UserFactory
+from common.djangoapps.student.tests.factories import UserFactory
 
 from .. import WaffleFlag, WaffleFlagNamespace, WaffleSwitch, WaffleSwitchNamespace
 from ..views import ToggleStateView

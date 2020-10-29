@@ -16,7 +16,7 @@ from openedx.features.enterprise_support.tests import FEATURES_WITH_ENTERPRISE_E
 from openedx.features.enterprise_support.tests.factories import (
     EnterpriseCustomerBrandingConfigurationFactory, EnterpriseCustomerUserFactory,
 )
-from student.tests.factories import UserFactory
+from common.djangoapps.student.tests.factories import UserFactory
 
 
 @ddt.ddt

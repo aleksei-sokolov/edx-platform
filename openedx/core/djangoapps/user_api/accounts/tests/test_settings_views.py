@@ -25,7 +25,7 @@ from openedx.core.djangoapps.user_api.accounts.toggles import REDIRECT_TO_ACCOUN
 from openedx.core.djangoapps.user_api.tests.factories import UserPreferenceFactory
 from openedx.core.djangoapps.waffle_utils.testutils import override_waffle_flag
 from openedx.core.djangolib.testing.utils import skip_unless_lms
-from student.tests.factories import UserFactory
+from common.djangoapps.student.tests.factories import UserFactory
 from third_party_auth.tests.testutil import ThirdPartyAuthTestMixin
 from openedx.features.enterprise_support.utils import get_enterprise_readonly_account_fields
 

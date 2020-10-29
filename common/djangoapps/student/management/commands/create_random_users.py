@@ -10,8 +10,8 @@ from opaque_keys.edx.keys import CourseKey
 from six.moves import range
 
 from openedx.core.djangoapps.user_authn.views.registration_form import AccountCreationForm
-from student.helpers import do_create_account
-from student.models import CourseEnrollment
+from common.djangoapps.student.helpers import do_create_account
+from common.djangoapps.student.models import CourseEnrollment
 
 
 def make_random_form():

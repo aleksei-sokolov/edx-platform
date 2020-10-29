@@ -11,8 +11,8 @@ from common.djangoapps.course_modes.models import CourseMode
 from common.djangoapps.course_modes.tests.factories import CourseModeFactory
 from mock import patch
 from pytz import utc
-from student.models import CourseEnrollment
-from student.tests.factories import CourseEnrollmentFactory
+from common.djangoapps.student.models import CourseEnrollment
+from common.djangoapps.student.tests.factories import CourseEnrollmentFactory
 from testfixtures import LogCapture
 from xmodule.modulestore import ModuleStoreEnum
 from xmodule.modulestore.tests.django_utils import SharedModuleStoreTestCase
