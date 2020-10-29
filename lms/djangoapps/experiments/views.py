@@ -93,6 +93,8 @@ class ExperimentKeyValueViewSet(viewsets.ModelViewSet):
 
 
 class UserMetaDataView(APIView):
+    authentication_classes = (JwtAuthentication, ExperimentCrossDomainSessionAuth,)
+    permission_classes = (IsStaffOrReadOnly,)
 
     def get(self, request, course_id=None, username=None):
         """ Return user-metadata for the given course and user """
