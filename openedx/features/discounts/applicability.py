@@ -18,7 +18,7 @@ from django.utils.dateparse import parse_datetime
 import pytz
 
 from common.djangoapps.course_modes.models import CourseMode
-from entitlements.models import CourseEntitlement
+from common.djangoapps.entitlements.models import CourseEntitlement
 from lms.djangoapps.experiments.models import ExperimentData
 from lms.djangoapps.experiments.stable_bucketing import stable_bucketing_hash_group
 from openedx.core.djangoapps.waffle_utils import WaffleFlag, WaffleFlagNamespace
