@@ -224,9 +224,6 @@ class LinkedInAddToProfileConfigurationAdmin(admin.ModelAdmin):
     class Meta(object):
         model = LinkedInAddToProfileConfiguration
 
-    # Exclude deprecated fields
-    exclude = ('dashboard_tracking_code',)
-
 
 class CourseEnrollmentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):

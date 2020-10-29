@@ -36,7 +36,7 @@ def course_has_highlights(course_key):
 
         if not highlights_are_available:
             log.warning(
-                u"Course team enabled highlights and provided no highlights in %s",
+                'Course team enabled highlights and provided no highlights in %s',
                 course_key
             )
 
@@ -63,7 +63,7 @@ def get_week_highlights(user, course_key, week_num):
     return highlights
 
 
-def get_next_section_highlights(user, course_key, start_date, target_date):
+def get_next_section_highlights(course_key, start_date, target_date):
     """
     Get highlights (list of unicode strings) for a week, based upon the current date.
 
@@ -71,29 +71,21 @@ def get_next_section_highlights(user, course_key, start_date, target_date):
         CourseUpdateDoeNotExist: if highlights do not exist for the requested date
     """
     course_descriptor = _get_course_with_highlights(course_key)
-    course_module = _get_course_module(course_descriptor, user)
-    sections_with_highlights = _get_sections_with_highlights(course_module)
-    highlights = _get_highlights_for_next_section(
-        course_module,
-        sections_with_highlights,
-        start_date,
-        target_date
-    )
-    return highlights
+    return _get_highlights_for_next_section(course_descriptor, start_date, target_date)
 
 
 def _get_course_with_highlights(course_key):
     # pylint: disable=missing-docstring
     if not COURSE_UPDATE_WAFFLE_FLAG.is_enabled(course_key):
         raise CourseUpdateDoesNotExist(
-            u"%s Course Update Messages waffle flag is disabled.",
+            '%s Course Update Messages waffle flag is disabled.',
             course_key,
         )
 
     course_descriptor = _get_course_descriptor(course_key)
     if not course_descriptor.highlights_enabled_for_messaging:
         raise CourseUpdateDoesNotExist(
-            u"%s Course Update Messages are disabled.",
+            '%s Course Update Messages are disabled.',
             course_key,
         )
 
@@ -104,7 +96,7 @@ def _get_course_descriptor(course_key):
     course_descriptor = modulestore().get_course(course_key, depth=1)
     if course_descriptor is None:
         raise CourseUpdateDoesNotExist(
-            u"Course {} not found.".format(course_key)
+            'Course {} not found.'.format(course_key)
         )
     return course_descriptor
 
@@ -145,7 +137,7 @@ def _get_highlights_for_week(sections, week_num, course_key):
     num_sections = len(sections)
     if not (1 <= week_num <= num_sections):
         raise CourseUpdateDoesNotExist(
-            u"Requested week {} but {} has only {} sections.".format(
+            'Requested week {} but {} has only {} sections.'.format(
                 week_num, course_key, num_sections
             )
         )
@@ -154,23 +146,28 @@ def _get_highlights_for_week(sections, week_num, course_key):
     return section.highlights
 
 
-def _get_highlights_for_next_section(course_module, sections, start_date, target_date):
-    for index, section, weeks_to_complete in spaced_out_sections(course_module):
-        if not _section_has_highlights(section):
-            continue
-
+def _get_highlights_for_next_section(course, start_date, target_date):
+    use_next_sections_highlights = False
+    for index, section, weeks_to_complete in spaced_out_sections(course):
         # We calculate section due date ourselves (rather than grabbing the due attribute),
         # since not every section has a real due date (i.e. not all are graded), but we still
         # want to know when this section should have been completed by the learner.
         section_due_date = start_date + weeks_to_complete
 
-        if section_due_date.date() == target_date and index + 1 < len(sections):
-            # Return index + 2 for "week_num", since weeks start at 1 as opposed to indexes,
-            # and we want the next week, so +1 for index and +1 for next
-            return sections[index + 1].highlights, index + 2
+        if section_due_date.date() == target_date:
+            use_next_sections_highlights = True
+        elif use_next_sections_highlights and not _section_has_highlights(section):
+            raise CourseUpdateDoesNotExist(
+                'Next section [{}] has no highlights for {}'.format(section.display_name, course.id)
+            )
+        elif use_next_sections_highlights:
+            return section.highlights, index + 1
 
-    raise CourseUpdateDoesNotExist(
-        u"No section found ending on {} for {}".format(
-            target_date, course_module.id
+    if use_next_sections_highlights:
+        raise CourseUpdateDoesNotExist(
+            'Last section [{}] was reached. There are no more highlights for {}'.format(
+                section.display_name, course.id
+            )
         )
-    )
+
+    return None, None
