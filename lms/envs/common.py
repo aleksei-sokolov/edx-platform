@@ -1294,6 +1294,11 @@ CODE_JAIL = {
         'REALTIME': 3,
         'PROXY': 0,
     },
+
+    # Overrides to default configurable 'limits' (above).
+    # Keys should be course ids.
+    # Values should be dictionaries that look like 'limits'.
+    "limit_overrides": {},
 }
 
 # Some courses are allowed to run unsafe code. This is a list of regexes, one

@@ -921,6 +921,11 @@ CODE_JAIL = {
         # Needs to be non-zero so that jailed code can use it as their temp directory.(1MiB in bytes)
         'FSIZE': 1048576,
     },
+
+    # Overrides to default configurable 'limits' (above).
+    # Keys should be course ids.
+    # Values should be dictionaries that look like 'limits'.
+    "limit_overrides": {},
 }
 
 # Some courses are allowed to run unsafe code. This is a list of regexes, one
