@@ -28,7 +28,7 @@ from common.djangoapps.course_modes.models import get_cosmetic_verified_display_
 from lms.djangoapps.commerce.utils import EcommerceService
 from lms.djangoapps.experiments.stable_bucketing import stable_bucketing_hash_group
 from common.djangoapps.student.models import CourseEnrollment
-from track import segment
+from common.djangoapps.track import segment
 
 
 # .. toggle_name: experiments.mobile_upsell_rev934

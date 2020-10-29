@@ -24,7 +24,7 @@ from lms.djangoapps.experiments.stable_bucketing import stable_bucketing_hash_gr
 from openedx.core.djangoapps.waffle_utils import WaffleFlag, WaffleFlagNamespace
 from openedx.features.discounts.models import DiscountPercentageConfig, DiscountRestrictionConfig
 from common.djangoapps.student.models import CourseEnrollment
-from track import segment
+from common.djangoapps.track import segment
 
 # .. toggle_name: discounts.enable_discounting
 # .. toggle_type: flag
