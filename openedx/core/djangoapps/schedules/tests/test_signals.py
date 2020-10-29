@@ -7,8 +7,8 @@ import datetime
 
 import ddt
 import pytest
-from course_modes.models import CourseMode
-from course_modes.tests.factories import CourseModeFactory
+from common.djangoapps.course_modes.models import CourseMode
+from common.djangoapps.course_modes.tests.factories import CourseModeFactory
 from mock import patch
 from pytz import utc
 from student.models import CourseEnrollment

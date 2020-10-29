@@ -22,7 +22,7 @@ from freezegun import freeze_time
 from pytz import UTC
 from six.moves.urllib.parse import urlencode  # pylint: disable=import-error
 
-from course_modes.models import CourseMode
+from common.djangoapps.course_modes.models import CourseMode
 from lms.djangoapps.branding.api import get_privacy_url
 from openedx.core.djangoapps.site_configuration.tests.factories import SiteConfigurationFactory, SiteFactory
 from openedx.core.djangoapps.site_configuration.tests.mixins import SiteMixin

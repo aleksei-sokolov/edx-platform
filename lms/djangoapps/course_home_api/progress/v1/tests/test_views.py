@@ -6,7 +6,7 @@ import ddt
 
 from django.urls import reverse
 
-from course_modes.models import CourseMode
+from common.djangoapps.course_modes.models import CourseMode
 from lms.djangoapps.course_home_api.tests.utils import BaseCourseHomeTests
 from lms.djangoapps.course_home_api.toggles import COURSE_HOME_MICROFRONTEND
 from lms.djangoapps.verify_student.models import ManualVerification

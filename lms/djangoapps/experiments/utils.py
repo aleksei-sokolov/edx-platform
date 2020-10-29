@@ -11,7 +11,7 @@ from django.utils.timezone import now
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 
-from course_modes.models import format_course_price, get_cosmetic_verified_display_price, CourseMode
+from common.djangoapps.course_modes.models import format_course_price, get_cosmetic_verified_display_price, CourseMode
 from lms.djangoapps.courseware.access import has_staff_access_to_preview_mode
 from lms.djangoapps.courseware.utils import verified_upgrade_deadline_link, can_show_verified_upgrade
 from entitlements.models import CourseEntitlement

@@ -10,8 +10,8 @@ import pytz
 from django.test import RequestFactory
 from mock import patch
 
-from course_modes.models import CourseMode
-from course_modes.tests.factories import CourseModeFactory
+from common.djangoapps.course_modes.models import CourseMode
+from common.djangoapps.course_modes.tests.factories import CourseModeFactory
 from lms.djangoapps.courseware.course_tools import FinancialAssistanceTool
 from lms.djangoapps.courseware.course_tools import VerifiedUpgradeTool
 from lms.djangoapps.courseware.models import DynamicUpgradeDeadlineConfiguration

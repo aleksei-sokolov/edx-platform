@@ -19,7 +19,7 @@ from six import text_type
 from six.moves import range
 
 from common.test.utils import XssTestMixin
-from course_modes.models import CourseMode
+from common.djangoapps.course_modes.models import CourseMode
 from edxmako.shortcuts import render_to_response
 from lms.djangoapps.courseware.tabs import get_course_tab_list
 from lms.djangoapps.courseware.tests.factories import StaffFactory, StudentModuleFactory, UserFactory
