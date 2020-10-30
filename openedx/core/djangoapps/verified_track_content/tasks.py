@@ -5,7 +5,7 @@ from celery.task import task
 from celery.utils.log import get_task_logger
 from django.contrib.auth.models import User
 from opaque_keys.edx.keys import CourseKey
-
+from time import sleep
 from openedx.core.djangoapps.course_groups.cohorts import add_user_to_cohort, get_cohort, get_cohort_by_name
 from student.models import CourseEnrollment, CourseMode
 
@@ -57,3 +57,25 @@ def sync_cohort_with_mode(self, course_id, user_id, verified_cohort_name, defaul
             course_id, user.id, unicode(exc)
         )
         raise self.retry(exc=exc)
+
+
+@task()
+def task_30sec():
+    LOGGER.info('!!!Test 30 sec START')
+    sleep(30)
+    LOGGER.info('!!!Test 30 sec END')
+
+
+@task()
+def task_5min():
+    LOGGER.info('!!!Test 5 min START')
+    sleep(60 * 5)
+    LOGGER.info('!!!Test 5 min END')
+
+
+@task()
+def task_20min():
+    LOGGER.info('!!!Test 20 min START')
+    sleep(60 * 20)
+    LOGGER.info('!!!Test 20 min END')
+
